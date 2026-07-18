@@ -1,1 +1,19 @@
-/*Stylesheet placeholder*/
+/*Universal selector*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-main: -apple-system, sans-serif;
+    --text-color: #00ff00;
+    --bg-color: #000000;
+}
+
+html {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
