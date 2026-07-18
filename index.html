@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>5k Training Buddy</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="card">
+            <hgroup>
+                <h1>5k Training Buddy</h1>
+                <p class="subtitle">Get to that 5K!</p>
+            </hgroup>
+
+            <!--Tab links-->
+            <div class="tab">
+                <button class="interval-tab" onclick="openTab(event, 'Intervals')">Intervals</button>
+                <button class="rep-tab" onclick="openTab(event, 'Reps')">Reps</button>
+                <button class="splits-tab" onclick="openTab(event, 'Splits')">Splits</button>
+                <button class="timed-tab" onclick="openTab(event, 'Timed')">Timed</button>
+            </div>
+
+            <!--Tab Content for intervals-->
+            <div id="Intervals" class="tab-content">
+                <hgroup>
+                    <h2>Intervals</h2>
+                    <p>Timed walk/run intervals</p>
+                </hgroup>
+                <label for="warmup-intervals">Enter warmup time (min)</label>
+                <input type="number" id="warmup-intervals" name="warmup-intervals" min="0" placeholder="0">
+                <label for="total-intervals">Enter total session time (min)</label>
+                <input type="number" id="total-intervals" name="total-intervals" min="0" placeholder="0">
+                <label for="run-intervals">Enter run interval time (min)</label>
+                <input type="number" id="run-intervals" name="run-intervals" min="0" placeholder="0">
+                <label for="walk-intervals">Enter walk interval time (min)</label>
+                <input type="number" id="walk-intervals" name="walk-intervals" min="0" placeholder="0">
+                <label for="cooldown-intervals">Enter cooldown time (min)</label>
+                <input type="number" id="cooldown-intervals" name="cooldown-intervals" min="0" placeholder="0">
+                <button onclick="startTimer()">Start session</button>
+                <button onclick="pauseTimer()">Pause session</button>
+                <button onclick="endTimer()">End Session</button>
+                <div class="results" id="intervals-results">
+                    <div class="result-row"><span class="ran">Ran</span><span id="intervalsRan"></span></div>
+                    <div class="result-row"><span class="walked">Walked</span><span id="intervalsWalked"></span></div>
+                    <div class="result-row"><span class="total">Session total</span><span id="intervalsTotal"></span></div>
+                </div>
+            </div>
+
+            <!--Tab Content for reps-->
+            <div id="Reps" class="tab-content">
+                <hgroup>
+                    <h2>Reps</h2>
+                    <p>Walk/run repetitions</p>
+                </hgroup>
+                <label for="warmup-reps">Enter warmup time (min)</label>
+                <input type="number" id="warmup-reps" name="warmup-reps" min="0" placeholder="0">
+                <label for="run-reps">Enter run time (min)</label>
+                <input type="number" id="run-reps" name="run-reps" min="0" placeholder="0">
+                <label for="walk-reps">Enter walk time (min)</label>
+                <input type="number" id="walk-reps" name="walk-reps" min="0" placeholder="0">
+                <label for="reps">Enter number of reps</label>
+                <input type="number" id="reps" name="reps" min="0" placeholder="0">
+                <label for="cooldown-reps">Enter cooldown time (min)</label>
+                <input type="number" id="cooldown-reps" name="cooldown-reps" min="0" placeholder="0">
+                <button onclick="startTimer()">Start session</button>
+                <button onclick="pauseTimer()">Pause session</button>
+                <button onclick="endTimer()">End session</button>
+                <div class="results" id="reps-results">
+                    <div class="result-row"><span class="ran">Ran</span><span id="repsRan"></span></div>
+                    <div class="result-row"><span class="walked">Walked</span><span id="repsWalked"></span></div>
+                    <div class="result-row"><span class="total">Session total</span><span id="repsTotal"></span></div>
+                </div>
+            </div>
+
+            <!--Tab content for splits-->
+            <div id="Splits" class="tab-content">
+                <hgroup>
+                    <h2>Splits</h2>
+                    <p>Three-way splits</p>
+                </hgroup>
+                <label for="warmup-splits">Enter warmup time (min)</label>
+                <input type="number" id="warmup-splits" name="warmup-splits" min="0" placeholder="0">
+                <label for="run-splits">Enter run time (min)</label>
+                <input type="number" id="run-splits" name="run-splits" min="0" placeholder="0">
+                <label for="walk-splits">Enter walk time (min)</label>
+                <input type="number" id="walk-splits" name="walk-splits" min="0" placeholder="0">
+                <label for="cooldown-splits">Enter cooldown time (min)</label>
+                <input type="number" id="cooldown-splits" name="cooldown-splits" min="0" placeholder="0">
+                <button onclick="startTimer()">Start session</button>
+                <button onclick="pauseTimer()">Pause session</button>
+                <button onclick="endTimer()">End session</button>
+                <div class="results" id="splits-results">
+                    <div class="result-row"><span class="ran">Ran</span><span id="splitsRan"></span></div>
+                    <div class="result-row"><span class="walked">Walked</span><span id="splitsWalked"></span></div>
+                    <div class="result-row"><span class="total">Session total</span><span id="splitsTotal"></span></div>
+                </div>
+            </div>
+
+            <!--Tab content for timed runs-->
+            <div id="Timed" class="tab-content">
+                <hgroup>
+                    <h2>Timed runs</h2>
+                    <p>Single timed run session</p>
+                </hgroup>
+                <label for="warmup-timed">Enter warmup time (min)</label>
+                <input type="number" id="warmup-timed" name="warmup-timed" min="0" placeholder="0">
+                <label for="run-timed">Enter run time (min)</label>
+                <input type="number" id="run-timed" name="run-timed" min="0" placeholder="0">
+                <label for="cooldown-timed">Enter cooldown time (min)</label>
+                <input type="number" id="cooldown-timed" name="cooldown-timed" min="0" placeholder="0">
+                <button onclick="startTimer()">Start session</button>
+                <button onclick="pauseTimer()">Pause session</button>
+                <button onclick="endTimer()">End session</button>
+                <div class="results" id="timed-results">
+                    <div class="result-row"><span class="ran">Ran</span><span id="timedRan"></span></div>
+                    <div class="result-row"><span class="walked">Walked</span><span id="timedWalked"></span></div>
+                    <div class="result-row"><span class="total">Session total</span><span id="timedTotal"></span></div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
