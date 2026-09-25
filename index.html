@@ -27,16 +27,26 @@
                     <h2>Intervals</h2>
                     <p class="subtitle">Timed walk/run intervals</p>
                 </hgroup>
-                <label for="warmup-intervals">Enter warmup time (min)</label>
-                <input type="number" id="warmup-intervals" name="warmup-intervals" min="0" placeholder="0">
-                <label for="total-intervals">Enter total session time (min)</label>
-                <input type="number" id="total-intervals" name="total-intervals" min="0" placeholder="0">
-                <label for="run-intervals">Enter run interval time (min)</label>
-                <input type="number" id="run-intervals" name="run-intervals" min="0" placeholder="0">
-                <label for="walk-intervals">Enter walk interval time (min)</label>
-                <input type="number" id="walk-intervals" name="walk-intervals" min="0" placeholder="0">
-                <label for="cooldown-intervals">Enter cooldown time (min)</label>
-                <input type="number" id="cooldown-intervals" name="cooldown-intervals" min="0" placeholder="0">
+                    <div class="input-group">
+                        <label for="warmup-intervals">Enter warmup time (min)</label>
+                        <input type="number" id="warmup-intervals" name="warmup-intervals" min="0" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="cooldown-intervals">Enter cooldown time (min)</label>
+                        <input type="number" id="cooldown-intervals" name="cooldown-intervals" min="0" placeholder="0">
+                    </div>   
+                    <div class="input-group">
+                        <label for="run-intervals">Enter run interval time (min)</label>
+                        <input type="number" id="run-intervals" name="run-intervals" min="0" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="walk-intervals">Enter walk interval time (min)</label>
+                        <input type="number" id="walk-intervals" name="walk-intervals" min="0" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="total-intervals">Enter total session time (min)</label>
+                        <input type="number" id="total-intervals" name="total-intervals" min="0" placeholder="0">
+                    </div>   
                 <button onclick="startTimer()">Start session</button>
                 <button onclick="pauseTimer()">Pause session</button>
                 <button onclick="endTimer()">End Session</button>

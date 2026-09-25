@@ -28,13 +28,14 @@ hgroup {
 }
 
 label {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 input {
     font: inherit;
     color: inherit;
     padding: 0.25rem;
+    width: 80px;
     background-color: var(--bg-color);
     border: 1px solid #ffa600;
     border-radius: 6px;
@@ -44,6 +45,10 @@ input {
 input::placeholder {
     font: inherit;
     color: inherit;
+}
+.input-group {
+    display: flex;
+    align-items: center;
 }
 
 .card {
@@ -58,28 +63,14 @@ input::placeholder {
     background: var(--bg-color)
 }
 
-.tab-content {
-    padding: 2rem;
-    border: 3px solid #ffa600;
-    border-top: none;
-}
-
-.tab-content button {
-    background-color: #f508aa;
-    color: #ffffff;
-    font-weight: 600;
-    padding: 0.25rem;
-}
-
 .tab button {
     background-color: inherit;
     color: var(--text-color);
     font-weight: 600;
-    float: left;
     border: 1px solid #f508aa;
     outline: none;
     cursor: pointer;
-    padding: 10px 11px;
+    padding: 1rem
 }
 
 .tab button:hover {
@@ -96,6 +87,20 @@ input::placeholder {
     border-bottom: none;
 }
 
+.tab-content {
+    padding: 2rem;
+    border: 3px solid #ffa600;
+    border-top: none;
+}
+
+.tab-content button {
+    background-color: #f508aa;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.25rem;
+}
+
+
 .results {
-    padding: 2rem
+    padding: 1rem
 }
